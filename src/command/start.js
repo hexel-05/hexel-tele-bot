@@ -1,6 +1,8 @@
+const { getMenuKeyboard } = require('../keyboard/keyboard');
+
 const command = (bot) => {
-    bot.start((ctx) => {
-        ctx.reply('Halo');
+    bot.on('start' , (ctx) => {
+        ctx.reply('Helo' , getMenuKeyboard());
     });
 }
 
