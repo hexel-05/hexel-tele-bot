@@ -3,20 +3,26 @@ const { Markup } = require('telegraf');
 module.exports = {
     getStartkeyboard: () => {
         return Markup.inlineKeyboard([
-            [Markup.button.callback('Show info' , 'info')]
-        ]);
+            [Markup.button.callback("📢 Informasi", "info"), Markup.button.callback("💰 Harga Paket", "harga")],
+            [Markup.button.callback("❓ FAQ", "faq"), Markup.button.callback("📝 Registrasi", "daftar")]
+        ])
     },
-
-    getBackKeyboard: () => {
+    getResgiterkeyboard: () => {
         return Markup.inlineKeyboard([
-            [Markup.button.callback('Back' , 'back')]
-        ]);
+            [Markup.button.callback("✅ Konfirmasi", "confirm")],
+            [Markup.button.callback("✏️ Edit Data", "edit")],
+            [Markup.button.callback("🔄 Ulangi", "restart")],
+        ])
     },
-
-    getMenukeyboard: () => {
+    getHargakeyboard: () => {
         return Markup.inlineKeyboard([
-            [Markup.button.callback('FAQ' , 'faq')],
-            [Markup.button.callback('Register' , 'daftar')]
+            [Markup.button.callback("🔹 Basic", 'basic') , Markup.button.callback("🔸 Bronze", 'bronze') , Markup.button.callback("⭐ Premium", 'premium')],
+            [Markup.button.callback("🔙 Kembali", 'back_harga_menu')]
+        ])
+    },
+    getBack: () => {
+        return Markup.inlineKeyboard([
+            [Markup.button.callback("🔙 Kembali", 'back')]
         ])
     }
 }

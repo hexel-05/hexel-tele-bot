@@ -15,7 +15,7 @@
   "description": "Basic project telegram bot",
   "main": "main.js",
   "scripts": {
-    "start": "nodemon main.js"
+    "start": "nodemon src/main.js "
   },
   "repository": {
     "type": "git",
