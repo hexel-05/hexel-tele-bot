@@ -1,7 +1,7 @@
 const { Markup } = require('telegraf');
 
 module.exports = {
-    getMenuKeyboard: () => {
+    getStartkeyboard: () => {
         return Markup.inlineKeyboard([
             [Markup.button.callback('Show info' , 'info')]
         ]);
@@ -11,5 +11,12 @@ module.exports = {
         return Markup.inlineKeyboard([
             [Markup.button.callback('Back' , 'back')]
         ]);
+    },
+
+    getMenukeyboard: () => {
+        return Markup.inlineKeyboard([
+            [Markup.button.callback('FAQ' , 'faq')],
+            [Markup.button.callback('Register' , 'daftar')]
+        ])
     }
 }

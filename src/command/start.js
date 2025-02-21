@@ -1,11 +1,11 @@
-const { getMenuKeyboard } = require('../keyboard/keyboard');
+const { getStartkeyboard } = require('../keyboard/keyboard');
 const log = require('../middlewares/logger');
 const sleep = require('../utils/sleep');
 
 module.exports = (bot) => {
     bot.command('start', async (ctx) => {
         await sleep(500);
-        await ctx.reply('Test' , getMenuKeyboard());
+        await ctx.reply('Test' , getStartkeyboard());
         log.info(`@${ctx.from.username} using command /start`);
     });
 
