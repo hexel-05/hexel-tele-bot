@@ -1,3 +1,3 @@
-const formatNama = require('./src/command/testNama');
+const {getWebhook} = require('./src/middlewares/ngrok');
 
-formatNama('Iqbal Ahnaf Fadholi Budiono siregar');
+console.log(getWebhook);
