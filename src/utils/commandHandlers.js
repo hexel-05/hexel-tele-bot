@@ -1,25 +1,29 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
 
-const commandFolder = path.join(__dirname , '../command');
+module.exports = async (bot) => {
+    try {
+        const commandFolder = path.join(__dirname, '../command/');
+        const files = await fs.readdir(commandFolder);
 
-module.exports = (bot) => {
-    fs.readdir(commandFolder, (err, files) => {
-        if (err) return console.error('Error loading command : ', err);
+        const loadedCommands = [];
 
-        files.forEach((file) => {
+        for (const file of files) {
             if (file.endsWith('.js')) {
-                const commandPath = path.join(commandFolder, file);
+                const commandPath = path.join(commandFolder , file);
                 delete require.cache[require.resolve(commandPath)];
 
                 try {
                     const command = require(commandPath);
                     command(bot);
-                    console.log(`Loaded command : ${file}`);
+                    loadedCommands.push(file);
                 } catch (error) {
-                    console.error(`Failed to load command ${file}`);
+                    console.error(`Failed to load command : ${file}`);
                 }
             }
-        });
-    });
+        }
+        console.log(`✅ Load Command : ${loadedCommands.join(', ')}`);
+    } catch(err) {
+        console.error("Error loading command : ", err);
+    }
 };

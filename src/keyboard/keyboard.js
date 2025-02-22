@@ -17,7 +17,12 @@ module.exports = {
     getHargakeyboard: () => {
         return Markup.inlineKeyboard([
             [Markup.button.callback("🔹 Basic", 'basic') , Markup.button.callback("🔸 Bronze", 'bronze') , Markup.button.callback("⭐ Premium", 'premium')],
-            [Markup.button.callback("🔙 Kembali", 'back_harga_menu')]
+            [Markup.button.callback("🔙 Kembali", 'menuutama')]
+        ])
+    },
+    getBackHarga: () => {
+        return Markup.inlineKeyboard([
+            [Markup.button.callback("🔙 Kembali", 'back_harga')]
         ])
     },
     getBack: () => {

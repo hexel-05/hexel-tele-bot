@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 
-const commandLoader = require('./utils/commandHandlers');
+const commandHandlers = require('./utils/commandHandlers');
 
 dotenv.config();
 
@@ -12,7 +12,7 @@ const app = express();
 const bot = new Telegraf(process.env.TOKEN);
 const PORT = process.env.PORT || 3000;
 
-commandLoader(bot);
+commandHandlers(bot);
 
 app.use(express.json());
 

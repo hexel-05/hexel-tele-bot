@@ -1,3 +1,3 @@
-const formatNama = require('./src/command/testNama');
+const pesan = require('./database');
 
-formatNama('Iqbal Ahnaf Fadholi Budiono siregar');
+console.log(pesan.help);
