@@ -1,7 +1,15 @@
 const pesan = require('../../database');
-const { getHargakeyboard, getStartkeyboard, getBackHarga } = require('../keyboard/keyboard');
+const { getBack } = require('../keyboard/keyboard');
 
 module.exports = (bot) => {
+
+    // Informasi
+    bot.action('info', (ctx) => {
+        ctx.answerCbQuery();
+        ctx.editMessageText(pesan.info , getBack());
+    })
+
+    // Harga
     bot.action('harga', (ctx) => {
         ctx.answerCbQuery();
         ctx.editMessageText(pesan.harga , getHargakeyboard());
@@ -32,4 +40,13 @@ module.exports = (bot) => {
         ctx.answerCbQuery();
         ctx.editMessageText(pesan.harga , getHargakeyboard());
     })
+
+    // FAQ
+    bot.action('faq', (ctx) => {
+        ctx.answerCbQuery();
+        ctx.editMessageText(pesan.faq , getBack());
+    })
+
+    // Registrasi
+    
 }

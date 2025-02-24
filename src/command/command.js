@@ -4,6 +4,8 @@ const sleep = require('../utils/sleep');
 const pesan = require('../../database');
 
 module.exports = (bot) => {
+
+    // Command start
     bot.command('start', async (ctx) => {
         await sleep(500);
         await ctx.reply(pesan.mulai , getStartkeyboard());
@@ -13,4 +15,12 @@ module.exports = (bot) => {
         ctx.answerCbQuery();
         ctx.editMessageText(pesan.mulai , getStartkeyboard());
     });
+
+    // Command help
+    bot.command('help', async (ctx) => {
+        await sleep(500);
+        await ctx.reply(help);
+    });
+
+
 };
