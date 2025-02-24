@@ -29,5 +29,10 @@ module.exports = {
         return Markup.inlineKeyboard([
             [Markup.button.callback("🔙 Kembali", 'back')]
         ])
+    },
+    getStartmenu: () => {
+        return Markup.inlineKeyboard([
+            [Markup.button.callback("🚀 Mulai" , 'start')]
+        ])
     }
 }

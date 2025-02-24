@@ -1,24 +1,30 @@
 const pesan = require('../../database');
-const { getBack } = require('../keyboard/keyboard');
+const { getBack, getHargakeyboard, getStartkeyboard, getBackHarga } = require('../keyboard/keyboard');
 
 module.exports = (bot) => {
+
+    // Help
+    bot.action('start', (ctx) => {
+        ctx.answerCbQuery();
+        ctx.editMessageText(pesan.mulai , getStartkeyboard());
+    });
 
     // Informasi
     bot.action('info', (ctx) => {
         ctx.answerCbQuery();
         ctx.editMessageText(pesan.info , getBack());
-    })
+    });
 
     // Harga
     bot.action('harga', (ctx) => {
         ctx.answerCbQuery();
         ctx.editMessageText(pesan.harga , getHargakeyboard());
-    })
+    });
 
     bot.action('basic', (ctx) => {
         ctx.answerCbQuery();
         ctx.editMessageText(pesan.paketa , getBackHarga());
-    })
+    });
 
     bot.action('bronze', (ctx) => {
         ctx.answerCbQuery();
@@ -48,5 +54,11 @@ module.exports = (bot) => {
     })
 
     // Registrasi
-    
+
+
+    // Back
+    bot.action('back', (ctx) => {
+        ctx.answerCbQuery();
+        ctx.editMessageText(pesan.mulai , getStartkeyboard());
+    });
 }
