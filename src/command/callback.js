@@ -1,56 +1,50 @@
-const pesan = require('../../database');
+const pesan = require('../../database/database');
+const callbackReply = require('../handlers/callbackHandlers');
 const { getBack, getHargakeyboard, getStartkeyboard, getBackHarga } = require('../keyboard/keyboard');
+const cooldowns = new Map(); // Menyimpan user yang sedang cooldown
+const COOLDOWN_TIME = 5000; // 5 detik cooldown
 
 module.exports = (bot) => {
 
     // Help
     bot.action('start', (ctx) => {
-        ctx.answerCbQuery();
-        ctx.editMessageText(pesan.mulai , getStartkeyboard());
+        callbackReply(ctx , pesan.mulai , getStartkeyboard());
     });
 
     // Informasi
     bot.action('info', (ctx) => {
-        ctx.answerCbQuery();
-        ctx.editMessageText(pesan.info , getBack());
+        callbackReply(ctx , pesan.info , getBack());
     });
 
     // Harga
     bot.action('harga', (ctx) => {
-        ctx.answerCbQuery();
-        ctx.editMessageText(pesan.harga , getHargakeyboard());
+        callbackReply(ctx, pesan.harga , getHargakeyboard());
     });
 
     bot.action('basic', (ctx) => {
-        ctx.answerCbQuery();
-        ctx.editMessageText(pesan.paketa , getBackHarga());
+        callbackReply(ctx, pesan.paketa , getBackHarga());
     });
 
     bot.action('bronze', (ctx) => {
-        ctx.answerCbQuery();
-        ctx.editMessageText(pesan.paketb , getBackHarga());
+        callbackReply(ctx, pesan.paketb , getBackHarga());
     })
 
     bot.action('premium', (ctx) => {
-        ctx.answerCbQuery();
-        ctx.editMessageText(pesan.paketc , getBackHarga());
+        callbackReply(ctx, pesan.paketc , getBackHarga());
     })
 
     // Menu kembali
     bot.action('menuutama', (ctx) => {
-        ctx.answerCbQuery();
-        ctx.editMessageText(pesan.mulai , getStartkeyboard());
+        callbackReply(ctx, pesan.mulai , getStartkeyboard());
     })
 
     bot.action('back_harga', (ctx) => {
-        ctx.answerCbQuery();
-        ctx.editMessageText(pesan.harga , getHargakeyboard());
+        callbackReply(ctx, pesan.harga , getHargakeyboard());
     })
 
     // FAQ
     bot.action('faq', (ctx) => {
-        ctx.answerCbQuery();
-        ctx.editMessageText(pesan.faq , getBack());
+        callbackReply(ctx, pesan.faq , getBack());
     })
 
     // Registrasi
@@ -58,7 +52,7 @@ module.exports = (bot) => {
 
     // Back
     bot.action('back', (ctx) => {
-        ctx.answerCbQuery();
-        ctx.editMessageText(pesan.mulai , getStartkeyboard());
+        callbackReply(ctx, pesan.mulai , getStartkeyboard());
     });
+    
 }

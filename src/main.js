@@ -1,30 +1,26 @@
 // third party module
 const { Telegraf } = require('telegraf');
+const { TOKEN , PORT , WEBHOOK } = require('./config/env');
+const commandHandlers = require('./handlers/commandHandlers');
 const express = require('express');
 const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
 
-const commandHandlers = require('./utils/commandHandlers');
-
-dotenv.config();
-
+const bot = new Telegraf(TOKEN);
 const app = express();
-const bot = new Telegraf(process.env.TOKEN);
-const PORT = process.env.PORT || 3000;
 
 commandHandlers(bot);
 
 app.use(express.json());
 
-app.post(`/webhook` , (req , res) => {
+app.post("/webhook", (req , res) => {
     bot.handleUpdate(req.body);
     res.sendStatus(200);
 });
 
 const setWebhook = async () => {
     try {
-        await bot.telegram.setWebhook(`${process.env.WEBHOOK}`);
-        console.log(`Webhook set to ${process.env.WEBHOOK}`);
+        await bot.telegram.setWebhook(`${WEBHOOK}`);
+        console.log(`Webhook set to ${WEBHOOK}`);
     } catch (error) {
         console.error(`Webhook getting error : ${error}`);
     }

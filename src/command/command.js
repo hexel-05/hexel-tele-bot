@@ -1,6 +1,6 @@
 const { getStartkeyboard, getBack, getStartmenu, getHargakeyboard } = require('../keyboard/keyboard');
 const sleep = require('../utils/sleep');
-const pesan = require('../../database');
+const pesan = require('../../database/database');
 
 module.exports = (bot) => {
 
@@ -32,12 +32,6 @@ module.exports = (bot) => {
     bot.command('faq' , async (ctx) => {
         await sleep(500);
         await ctx.reply(pesan.faq , getBack());
-    });
-
-    // Command registrasi
-    bot.command('registrasi', async (ctx) => {
-        await sleep(500);
-        await ctx.reply("Comming soon");
     });
 
 };
