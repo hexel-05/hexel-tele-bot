@@ -4,7 +4,7 @@ module.exports = {
     getStartkeyboard: () => {
         return Markup.inlineKeyboard([
             [Markup.button.callback("📢 Informasi", "info"), Markup.button.callback("💰 Harga Paket", "harga")],
-            [Markup.button.callback("❓ FAQ", "faq"), Markup.button.callback("📝 Registrasi", "daftar")]
+            [Markup.button.callback("❓ FAQ", "faq"), Markup.button.callback("📝 Registrasi", "regis")]
         ])
     },
     getResgiterkeyboard: () => {
@@ -33,6 +33,12 @@ module.exports = {
     getStartmenu: () => {
         return Markup.inlineKeyboard([
             [Markup.button.callback("🚀 Mulai" , 'start')]
+        ])
+    },
+    getRegistrasi: () => {
+        return Markup.inlineKeyboard([
+            [Markup.button.callback("📝 Daftar" , 'daftar')],
+            [Markup.button.callback("❌ Batal" , 'batal')]
         ])
     }
 }

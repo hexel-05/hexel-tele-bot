@@ -1,6 +1,7 @@
 const { getStartkeyboard, getBack, getStartmenu, getHargakeyboard } = require('../keyboard/keyboard');
 const sleep = require('../utils/sleep');
 const pesan = require('../../database/database');
+const mulaiMendaftar = require('./register');
 
 module.exports = (bot) => {
 
@@ -34,4 +35,5 @@ module.exports = (bot) => {
         await ctx.reply(pesan.faq , getBack());
     });
 
+    // Command Register
 };

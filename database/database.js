@@ -120,5 +120,21 @@ Saat ini, kami belum menyediakan sertifikat, tetapi kami fokus memberikan ilmu y
 Anda bisa menghubungi tim support kami melalui tombol ℹ️ Informasi atau langsung bertanya di grup diskusi.
 
 📢 Masih ada pertanyaan lain?
-Jangan ragu untuk menghubungi kami atau cek menu lainnya! 🚀`
+Jangan ragu untuk menghubungi kami atau cek menu lainnya! 🚀`,
+    daftar: `📝 Pendaftaran Kelas Trading Hexel
+
+Untuk melanjutkan pendaftaran, silakan isi beberapa informasi berikut:
+
+1️⃣ Nama Lengkap: (Silakan ketik nama lengkap Anda)
+2️⃣ Nomor WhatsApp: (Masukkan nomor yang bisa dihubungi)
+3️⃣ Pilih Paket:
+🔹 Basic - Rp 100.000
+🔹 Bronze - Rp 250.000
+🔹 Premium - Rp 500.000
+
+💡 Cara memilih paket: Ketik 1 untuk Basic, 2 untuk Bronze, atau 3 untuk Premium.
+
+📢 Harap isi data dengan benar! Setelah semua data dikirim, Anda akan menerima instruksi pembayaran dan langkah selanjutnya.
+
+Jika ingin membatalkan pendaftaran, ketik /batal.`
 };
