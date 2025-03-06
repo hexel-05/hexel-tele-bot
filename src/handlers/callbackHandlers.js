@@ -1,5 +1,5 @@
 const cooldowns = new Map();
-const COOLDOWN_TIME = 2000;
+const COOLDOWN_TIME = 500;
 
 const callbackReply = async (ctx, respon , keyboards) => {
     const userId = ctx.from.id;
